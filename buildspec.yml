@@ -11,13 +11,13 @@ phases:
       - ls
   build:
     commands:
-      # - echo Build started on `date`
-      # - cd src && meteor build .. --allow-superuser --directory
-      # - cd ../bundle/programs/server && npm install --production
       - echo Build started on `date`
-      - cd src && npm install --production
-      - meteor build ... --allow-superuser --directory --architecture os.linux.x86_64 --server $ROOT_URL
-      - cd .../bundle/programs/server && npm install
+      - cd src && meteor build .. --allow-superuser --directory
+      - cd ../bundle/programs/server && npm install --production
+      # - echo Build started on `date`
+      # - cd src && npm install --production
+      # - meteor build ... --allow-superuser --directory --architecture os.linux.x86_64 --server $ROOT_URL
+      # - cd .../bundle/programs/server && npm install
   post_build:
     commands:
       - cd ../../../
@@ -25,8 +25,8 @@ phases:
 artifacts:
   base-directory: bundle # Bundle contains the built code
   files:
-    - ./**/* # Include all files 
+    - ./**/* # Include all files
 env:
   variables:
     ROOT_URL: "http://amaynu-web-production.eu-west-2.elasticbeanstalk.com"
-    MONGO_URL: “mongodb://sajoul:54mS4n1k0v@ds127375.mlab.com:27375/amaynu”
+    MONGO_URL: "mongodb://sajoul:54mS4n1k0v@ds127375.mlab.com:27375/amaynu"
