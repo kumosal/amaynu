@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - echo Installing Meteor 1.6
-      - curl "https://install.meteor.com/?release=1.6-rc.16" | sh
+      - curl https://install.meteor.com/?release=1.6-rc.16 | sh
       # - curl https://install.meteor.com/ | sh
   pre_build:
     commands:
