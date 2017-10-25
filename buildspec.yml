@@ -4,8 +4,8 @@ phases:
   install:
     commands:
       - echo Installing Meteor
-      - curl https://install.meteor.com/?release=1.6-rc | sh
-      # - curl https://install.meteor.com/ | sh
+      # - curl https://install.meteor.com/?release=1.6-rc | sh
+      - curl https://install.meteor.com/ | sh
   pre_build:
     commands:
       - echo Displaying folder structure
