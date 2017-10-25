@@ -3,8 +3,9 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Installing Meteor
-      - curl https://install.meteor.com/ | sh
+      - echo Installing Meteor 1.6
+      - curl "https://install.meteor.com/?release=1.6-rc.16" | sh
+      # - curl https://install.meteor.com/ | sh
   pre_build:
     commands:
       - echo Displaying folder structure
@@ -14,10 +15,6 @@ phases:
       - echo Build started on `date`
       - cd src && meteor build .. --allow-superuser --directory
       - cd ../bundle/programs/server && npm install --production
-      # - echo Build started on `date`
-      # - cd src && npm install --production
-      # - meteor build ... --allow-superuser --directory --architecture os.linux.x86_64 --server $ROOT_URL
-      # - cd .../bundle/programs/server && npm install
   post_build:
     commands:
       - cd ../../../
@@ -26,7 +23,3 @@ artifacts:
   base-directory: bundle # Bundle contains the built code
   files:
     - ./**/* # Include all files
-env:
-  variables:
-    ROOT_URL: "http://amaynu-web-production.eu-west-2.elasticbeanstalk.com"
-    MONGO_URL: "mongodb://sajoul:54mS4n1k0v@ds127375.mlab.com:27375/amaynu"
