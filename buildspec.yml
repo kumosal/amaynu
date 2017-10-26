@@ -4,7 +4,6 @@ phases:
   install:
     commands:
       - echo Installing Meteor
-      # - curl https://install.meteor.com/?release=1.6-rc | sh
       - curl https://install.meteor.com/ | sh
   pre_build:
     commands:
@@ -13,7 +12,6 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - npm install
       - cd src && meteor build .. --allow-superuser --directory
       - cd ../bundle/programs/server && npm install --production
   post_build:
