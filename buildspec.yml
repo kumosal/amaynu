@@ -12,8 +12,9 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - cd src && meteor build .. --allow-superuser --directory
-      - cd ../bundle/programs/server && npm install --production
+      - cd src && npm install --production
+      - meteor build .. --allow-superuser --directory
+      - cd ../bundle/programs/server && npm install
   post_build:
     commands:
       - cd ../../../
