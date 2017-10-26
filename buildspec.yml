@@ -17,7 +17,7 @@ phases:
       - cd ../bundle/programs/server && npm install --production
   post_build:
     commands:
-      - cd ../../../
+      - cd ../../
       - echo Build completed on `date`
 artifacts:
   base-directory: bundle # Bundle contains the built code
