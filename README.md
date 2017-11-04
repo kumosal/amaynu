@@ -1,1 +1,1 @@
-This is a meteor project
+This is a meteor 1.6 project
